@@ -1,0 +1,12 @@
+.error {
+  color: red;
+  margin-left: 0.5em
+}
+
+.inp {
+  margin-bottom: 1.2em;
+}
+
+.btnSubmit { 
+  margin-top: 1em;
+}

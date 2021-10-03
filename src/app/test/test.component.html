@@ -1,0 +1,39 @@
+<h2>Test Form</h2>
+
+<form class="formGroup">
+  <div class="inp">
+    <label for="name">Enter your name: </label><br />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="userName"
+      (focus)="nameFocus()"
+    />
+    <span class="error" *ngIf="wrongNameInput">Error</span>
+  </div>
+  <div class="inp">
+    <label for="age">Enter your age: </label><br />
+    <input
+      type="number"
+      min="1"
+      id="age"
+      name="age"
+      [(ngModel)]="userAge"
+      (focus)="ageFocus()"
+      (ngModelChange)="ageChanged()"
+    />
+    <span class="error" *ngIf="wrongAgeInput">Error</span>
+  </div>
+  <div class="btnSubmit">
+    <input type="submit" value="Submit" (click)="onClick()" />
+  </div>
+
+  <div *ngIf="userClicked">
+    <h4>Your details:</h4>
+    <p>Name: {{ userName }}</p>
+    <p>
+      Age: <span [style]="ageStyle">{{ userAge }}</span>
+    </p>
+  </div>
+</form>
